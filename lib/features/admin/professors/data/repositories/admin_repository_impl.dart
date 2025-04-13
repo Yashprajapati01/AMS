@@ -8,8 +8,8 @@ class AdminRepositoryImpl {
   // ... methods for batches, programs, branches, students
 
   // Professors
-  Future<Professor> createProfessor(String professorUniqueId, String name, int departmentId) async {
-    final data = await remoteDataSource.createProfessor(professorUniqueId, name, departmentId);
+  Future<Professor> createProfessor(String professorUniqueId, String name, int departmentId, String password) async {
+    final data = await remoteDataSource.createProfessor(professorUniqueId, name, departmentId, password);
     return Professor.fromJson(data['professor']);
   }
 

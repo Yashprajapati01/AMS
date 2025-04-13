@@ -40,7 +40,7 @@ class ProfessorBloc extends Bloc<ProfessorEvent, ProfessorState> {
   Future<void> _onCreateProfessor(CreateProfessorEvent event, Emitter<ProfessorState> emit) async {
     emit(ProfessorLoading());
     try {
-      await createProfessorUseCase.call(event.professorUniqueId, event.name, event.departmentId);
+      await createProfessorUseCase.call(event.professorUniqueId, event.name, event.departmentId, event.password);
       final professors = await getProfessorsUseCase.call(departmentId: departmentId);
       emit(ProfessorLoaded(professors: professors));
     } catch (e) {

@@ -6,7 +6,7 @@ class CreateProfessor {
 
   CreateProfessor({required this.repository});
 
-  Future<Professor> call(String professorUniqueId, String name, int departmentId , String password) async {
-    return await repository.createProfessor(professorUniqueId, name, departmentId, password);
+  Future<Professor> call(String professorUniqueId, String name, int departmentId) async {
+    return await repository.createProfessor(professorUniqueId, name, departmentId);
   }
 }

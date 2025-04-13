@@ -118,7 +118,7 @@ class AdminRemoteDataSource {
 
   // Professors endpoints
 
-  Future<Map<String, dynamic>> createProfessor(String professorUniqueId, String name, int departmentId) async {
+  Future<Map<String, dynamic>> createProfessor(String professorUniqueId, String name, int departmentId, String password) async {
     final token = await _getToken();
     final url = Uri.parse('$baseUrl/professors');
     final response = await http.post(
@@ -131,6 +131,7 @@ class AdminRemoteDataSource {
         "professor_unique_id": professorUniqueId,
         "name": name,
         "department_id": departmentId,
+        "password": "12345678"
       }),
     );
     if (response.statusCode == 201) {

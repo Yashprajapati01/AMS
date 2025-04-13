@@ -160,6 +160,7 @@ class ManageProfessorsScreen extends StatelessWidget {
                     professorUniqueId: uniqueId,
                     name: name,
                     departmentId: selectedDepartment,
+                    password: "12345678",
                   ),
                 );
                 Navigator.of(dialogContext).pop();

@@ -19,15 +19,17 @@ class CreateProfessorEvent extends ProfessorEvent {
   final String professorUniqueId;
   final String name;
   final int departmentId;
+  final String password;
 
   const CreateProfessorEvent({
     required this.professorUniqueId,
     required this.name,
     required this.departmentId,
+    required this.password,
   });
 
   @override
-  List<Object?> get props => [professorUniqueId, name, departmentId];
+  List<Object?> get props => [professorUniqueId, name, departmentId, password];
 }
 
 class UpdateProfessorEvent extends ProfessorEvent {
